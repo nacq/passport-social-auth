@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul
+    li
+       a(href='/auth/google') Sign in with Google
+    li
+       a(href='/auth/facebook') Sign in with Facebook
+    li
+       a(href='/auth/twitter') Sign in with Twitter
+  if(!userData)
+    pre You are not logged in
+  else
+    p You successfully logged in with Google
+    p This is your token #{userData}
