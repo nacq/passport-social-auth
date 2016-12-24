@@ -11,6 +11,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var google = require('./routes/google');
 var twitter = require('./routes/twitter');
+var github = require('./routes/github');
 
 var app = express();
 
@@ -27,9 +28,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(session({
-  secret: 'super-complicated-secret',
-  resave: false,
-  saveUninitialized: false
+	secret: 'super-complicated-secret',
+	resave: false,
+	saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -39,7 +40,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/google', google);
 app.use('/twitter', twitter);
-
+app.use('/github', github);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
